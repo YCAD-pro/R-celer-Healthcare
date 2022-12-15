@@ -33,8 +33,10 @@ const SiteFocusComponent = (props) => {
   }, [update]);
 
   const addInfo = (event) => {
-    site[event.target.id] = event.target.value;
-    setSite(site);
+    let siteTemp = { ...site };
+    siteTemp[event.target.id] = event.target.value;
+    console.log(siteTemp);
+    setSite(siteTemp);
   };
 
   const sendForm = (event) => {

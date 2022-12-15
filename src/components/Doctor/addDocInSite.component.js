@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function AddDocInSite(props) {
+function AddDocInSiteComponent(props) {
   const [freeDocs, setFreeDocs] = useState([]);
   const [sites, setSites] = useState([]);
   const [contentForm, setContentForm] = useState({});
@@ -59,23 +59,51 @@ function AddDocInSite(props) {
   }
 
   return (
-    <div>
-      <h1>Choose a doc and site to add</h1>
-      <form onSubmit={(e) => addDocToSite(e)}>
-        <label htmlFor="chooseDoc">Choose the doc :</label>
-        <select name="doc" onChange={(e) => setInfo(e)}>
-          <option defaultValue>Choose a doc</option>
-          {listDocWithNoSite()}
-        </select>
-        <label htmlFor="chooseSite">Choose the site :</label>
-        <select name="site" onChange={(e) => setInfo(e)}>
-          <option defaultValue>Choose a site</option>
-          {listSite()}
-        </select>
-        <input className="btn btn-success" type="submit" value="Add..." />
+    <div className="mt-5">
+      <form className="form form-control" onSubmit={(e) => addDocToSite(e)}>
+        <div className="h1">Choose a doc and site to add</div>
+        <div className="row container-fluid mt-3">
+          <div className="col-3">
+            <label className="col-form-label" htmlFor="chooseDoc">
+              Choose the doc :
+            </label>
+          </div>
+          <div className="col-8">
+            <select
+              className="form-select"
+              name="doc"
+              onChange={(e) => setInfo(e)}
+            >
+              <option defaultValue>Choose a doc</option>
+              {listDocWithNoSite()}
+            </select>
+          </div>
+        </div>
+        <div className="row container-fluid mt-3">
+          <div className="col-3">
+            <label className="col-form-label" htmlFor="chooseSite">
+              Choose the site :
+            </label>
+          </div>
+          <div className="col-8">
+            <select
+              className="form-select"
+              name="site"
+              onChange={(e) => setInfo(e)}
+            >
+              <option defaultValue>Choose a site</option>
+              {listSite()}
+            </select>
+          </div>
+        </div>
+        <div className="container">
+          <div className="row align-content-center mt-4">
+            <input className="btn btn-success" type="submit" value="Add" />
+          </div>
+        </div>
       </form>
     </div>
   );
 }
 
-export default AddDocInSite;
+export default AddDocInSiteComponent;

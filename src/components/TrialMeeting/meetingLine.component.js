@@ -14,7 +14,9 @@ const MeetingLineComponent = (props) => {
       <td>
         <button
           className="btn btn-primary"
-          onClick={() => props.btn(props.idMeeting)}
+          onClick={() =>
+            props.btn(props.patient, props.date, props.trial, props.idMeeting)
+          }
         >
           Begin
         </button>

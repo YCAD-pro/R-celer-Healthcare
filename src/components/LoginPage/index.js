@@ -25,12 +25,11 @@ function LoginPage() {
       headers: { "Content-Type": "application/json" },
     })
       .then((res) => res.json())
-      .then((json) => {
-        if (json.error) {
-          setError(json.error);
-        } else {
-          console.log("token", json, "go to next page");
-        }
+      .catch((err) => console.error(err))
+      .then((token) => {
+        // look like if(tokenUser:NOT NULL) .... else ....
+        console.log("token", token);
+        // plug the token and go to the main page...
       });
 
     console.log(

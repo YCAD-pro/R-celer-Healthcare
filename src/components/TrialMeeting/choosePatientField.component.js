@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const ChoosePatientField = ({ trialId, fctChange }) => {
+const ChoosePatientFieldComponent = ({ trialId, fctChange }) => {
   const [patients, setPatients] = useState([]);
 
   useEffect(() => {
@@ -31,9 +31,12 @@ const ChoosePatientField = ({ trialId, fctChange }) => {
         id="choosePatient"
         onChange={(e) => fctChange(e.target.value)}
       >
+        <option value="0" selected disabled>
+          Choose a patient
+        </option>
         {fillPatients()}
       </select>
     </div>
   );
 };
-export default ChoosePatientField;
+export default ChoosePatientFieldComponent;

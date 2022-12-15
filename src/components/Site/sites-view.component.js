@@ -14,10 +14,10 @@ const SitesViewComponent = () => {
     if (sites.length === 0) {
       return <h2>No site to view</h2>;
     } else {
-      return sites.map((site, index) => {
+      return sites.map((site) => {
         return (
           <SiteCardComponent
-            key={index}
+            key={site.site_id}
             site={site}
             image={`https://picsum.photos/id/${site.site_id + 10}/180/210`}
           />

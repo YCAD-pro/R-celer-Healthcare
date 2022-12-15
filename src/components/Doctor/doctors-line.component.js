@@ -4,10 +4,10 @@ const DoctorsLineComponent = ({ doctor, img, removeFct }) => {
   return (
     <div className="row d-flex">
       <div className="col-2">
-        <img src={img} />
+        <img className="img-doctor" src={img} />
       </div>
       <h5 className="col">{doctor.username}</h5>
-      <p className="col-3">
+      <p className="col-4">
         "{doctor.lastname} {doctor.firstname}"
       </p>
       <button

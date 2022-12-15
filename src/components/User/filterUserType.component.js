@@ -1,7 +1,7 @@
 const FilterUserTypeComponent = (props) => {
   return (
     <form
-      className="form col-12"
+      className="form form-control col-12 mt-2"
       onChange={(event) => props.change(event.target)}
     >
       <div className="form-check form-check-inline">

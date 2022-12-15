@@ -2,7 +2,7 @@ const UserRowComponent = (props) => {
   return (
     <tr>
       <td>
-        <img src={props.img} />
+        <img src={props.img} alt="img" />
       </td>
       <th>{props.user.status}</th>
       <td>{props.user.username}</td>

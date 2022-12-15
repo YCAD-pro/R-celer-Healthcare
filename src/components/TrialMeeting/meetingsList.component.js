@@ -1,6 +1,8 @@
 import MeetingLineComponent from "./meetingLine.component";
+import { useNavigate } from "react-router-dom";
 
 const MeetingsListComponent = (props) => {
+  const navigate = useNavigate();
   const generateList = () => {
     return props.meetings.map((meeting, index) => {
       return (
@@ -16,8 +18,15 @@ const MeetingsListComponent = (props) => {
     });
   };
 
-  const startTrial = (meetingId) => {
-    console.log("to start " + meetingId);
+  const startTrial = (patient, date, trial, idMeeting) => {
+    navigate("/populateMeeting", {
+      state: {
+        idMeeting: idMeeting,
+        patient: patient,
+        date: date,
+        trial: trial,
+      },
+    });
   };
   return (
     <div className="container">
